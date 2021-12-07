@@ -1,6 +1,8 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 #include<string>
+#include <fstream>
+#include <iostream>
 using namespace std;
 
 // This is defined as a pure virtual class, since no implementations are provided the majority
@@ -9,6 +11,7 @@ using namespace std;
 
 class HashTable {
     private:
+    protected:
         int m;                          // Size of the internal table(s)
 
 	public:

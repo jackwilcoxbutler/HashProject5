@@ -3,7 +3,7 @@
 #include"hashtable.h"
 #include<string>
 #include<iomanip>
-
+#include"HashTableLinearProbing.h"
 using namespace std;
 
 int main(){
@@ -20,10 +20,10 @@ int main(){
   cin >> input;
 
 
-
+    HashTableLinearProbing * table;
   if(input == "1")
   {
-    //HashTableLinearProbing table = new HashTableLinearProbing();
+    table = new HashTableLinearProbing();
   }else if(input == "2")
   {
     //HashTableChaining table = new HashTableChaining();
@@ -55,30 +55,42 @@ int main(){
         string fileIn;
         cout << "Enter input file name: ";
         cin >> fileIn;
-      //table->load(fileIn);
+        if (1==table->load(fileIn))
+            cout<<"Table Load Successful"<< endl;
+        else
+            cout<<"**Table Load Failed**"<< endl;
     }else if(input == "2")
       {
         int tempVal;
         cout << "Insert (Enter Value) : ";
         cin >> tempVal;
-        //table->insert(tempVal);
+        if (1==table->insert(tempVal))
+            cout<<"Insert Successful"<< endl;
+        else
+            cout<<"**Insert Failed**"<< endl;
       }else if(input == "3")
       {
         int tempVal;
         cout << "Search (Enter Value) : ";
         cin >> tempVal;
-        //table->search(tempVal);
+        if (1==table->search(tempVal))
+            cout<<"Value Found In Table"<< endl;
+        else
+            cout<<"**Value Not Found In Table**"<< endl;
       }else if(input == "4")
       {
         int tempVal;
         cout << "Delete (Enter Value) : ";
         cin >> tempVal;
-        //table->delete(tempVal);
+        if (1==table->remove(tempVal))
+            cout<<"Delete Successful"<< endl;
+        else
+            cout<<"**Delete Failed**"<< endl;
       }else if(input == "5")
       {
-        //table->print();
+        table->print();
       }
     }
-  //delete table;
+  delete table;
   }
 }
