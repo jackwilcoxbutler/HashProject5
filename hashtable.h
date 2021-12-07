@@ -3,6 +3,7 @@
 #include<string>
 #include <fstream>
 #include <iostream>
+#include <list>
 using namespace std;
 
 // This is defined as a pure virtual class, since no implementations are provided the majority

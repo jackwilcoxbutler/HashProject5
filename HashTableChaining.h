@@ -1,29 +1,23 @@
-//
-//  HashTableLinearProbing.h
-//  
-//
-//  Created by Jesse Hamlin on 12/7/21.
-//
+#ifndef HashTableChaining_h
+#define HashTableChaining_h
 
-#ifndef HashTableLinearProbing_h
-#define HashTableLinearProbing_h
-
-
+#include <list>
 #include "hashtable.h"
 
-class HashTableLinearProbing : virtual public HashTable{
+class HashTableChaining : virtual public HashTable{
     
 private:
     
 public:
-    HashTableLinearProbing(){
+    list<int> * hash;
+    HashTableChaining(){
         m=0;
     }
-    ~HashTableLinearProbing(){
+    ~HashTableChaining(){
         delete [] hash;
     }
     
-    int * hash;
+    
     
     int load(string file);      // Returns 1 if the input file was loaded and all entries were inserted correctly, 0 otherwise.
     void print();               // Print the table in a pretty way
@@ -33,7 +27,6 @@ public:
 
 };
 
+#endif
 
 
-
-#endif /* HashTableLinearProbing_h */

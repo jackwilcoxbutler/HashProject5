@@ -4,6 +4,9 @@
 #include<string>
 #include<iomanip>
 #include"HashTableLinearProbing.h"
+#include"HashTableChaining.h"
+
+
 using namespace std;
 
 int main(){
@@ -20,17 +23,20 @@ int main(){
   cin >> input;
 
 
-    HashTableLinearProbing * table;
+    HashTable * table;
   if(input == "1")
   {
-    table = new HashTableLinearProbing();
-  }else if(input == "2")
+      table = new HashTableLinearProbing();
+  }
+  else if(input == "2")
   {
-    //HashTableChaining table = new HashTableChaining();
-  }else if(input == "3")
+    table = new HashTableChaining();
+  }
+  else if(input == "3")
   {
     //HashTableCuckoo table = new HashTableCuckoo();
-  }else
+  }
+  else
   {
     cout << "Exiting Program" << endl;
     exit(1);

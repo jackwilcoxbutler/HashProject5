@@ -2,3 +2,4 @@
 .DS_Store
 valgrindoutput.txt
 *.o
+blah
