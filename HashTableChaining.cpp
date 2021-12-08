@@ -35,8 +35,12 @@ void HashTableChaining :: print(){
         cout<< "["<<i<<"]:";
         if (hash[i].front()!=0)
         {
-            for (list<int>::iterator x = hash[i].begin(); x != hash[i].end(); x++)
-                cout << setw(3) << setfill(' ') << *x <<  " -> ";
+            for (list<int>::iterator x = hash[i].begin(); x != hash[i].end(); )
+            {
+                cout << setw(3) << setfill(' ') << *x <<  " ";
+                if (++x!=hash[i].end())
+                    cout<< "->";
+            }
             cout << endl;
         }
         else

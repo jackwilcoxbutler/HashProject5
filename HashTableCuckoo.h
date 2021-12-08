@@ -13,7 +13,7 @@ class HashTableCuckoo : virtual public HashTable{
 private:
     int * t1;
     int * t2;
-    void rehash();
+    int rehash();
 public:
     HashTableCuckoo(){
         m=0;
