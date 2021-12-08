@@ -23,7 +23,7 @@ int HashTableCuckoo :: load(string file){
 
 int HashTableCuckoo :: insert(int value){
 
-    for(int i=0; i < 1;i++)
+    for(int i=0; i < m;i++)
     {
       int h1 = value % m;
       if(t1[h1] == 0)
@@ -42,16 +42,14 @@ int HashTableCuckoo :: insert(int value){
       t2[h2] = value;
       value = t2[h2];
     }
-    //rehash;
-    //insert(x);
+    cout << "rehash called " << endl;
+    rehash();
+    insert(value);
     return 0;
 }
 
 void HashTableCuckoo :: rehash(){
   return;
-  //rehash increases m by 3
-  //check if less than 21
-  //insert values from old table
 }
 
 int HashTableCuckoo :: search(int value){
@@ -84,22 +82,11 @@ void HashTableCuckoo :: print(){
     for (int i=0;i<m;i++)
     {
       if(i<10)
-        {cout<< "[0"<<i<<"]: ";}
+      cout <<"[0" << i << "] : " << setw(5) << setfill(' ') << t1[i] << setw(6) << setfill(' ')<< "[0" << i << "] : " << setw(5) << setfill(' ')<< t2[i] << endl;
       else
-        {cout<< "["<<i<<"]: ";}
-      if (t1[i]!=0)
-        {cout<< setw(10) << setfill(' ') << t1[i];}
-      else
-        {cout << setw(10) << setfill(' ');}
-      if(i<10)
-        {cout<< "[0"<<i<<"]: ";}
-      else
-        {cout<< "["<<i<<"]: ";}
-      if (t2[i]!=0)
-        {cout<< setw(10) << setfill(' ') << t2[i];}
-      else
-        {cout << setw(10) << setfill(' ');}
-            cout<<endl;
+      cout <<"[" << i << "] : " << setw(5) << setfill(' ')  << t1[i] << setw(5) << setfill(' ') << "[" << i << "] : " << setw(5) << setfill(' ') << t2[i] << endl;
     }
+
+    
     cout << endl << "***********************************" << endl;
 }
