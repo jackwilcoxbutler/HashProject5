@@ -5,6 +5,7 @@
 #include<iomanip>
 #include"HashTableLinearProbing.h"
 #include"HashTableChaining.h"
+#include"HashTableCuckoo.h"
 
 
 using namespace std;
@@ -34,7 +35,7 @@ int main(){
   }
   else if(input == "3")
   {
-    //HashTableCuckoo table = new HashTableCuckoo();
+     table = new HashTableCuckoo();
   }
   else
   {

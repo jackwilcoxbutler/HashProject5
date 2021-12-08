@@ -9,7 +9,7 @@ int HashTableChaining :: load(string file){
         hash = new list<int>[m];
         for (int i=0;i<m;i++)
             hash[i].push_back(0);
-        
+
         int itemsInFile;
         input >> itemsInFile;
         for (int i=0;i<itemsInFile;i++)
@@ -29,11 +29,14 @@ void HashTableChaining :: print(){
     cout << endl << "***********************************" << endl;
     for (int i=0;i<m;i++)
     {
-        cout<< "["<<i<<"]: ";
+      if(i < 10)
+        cout << "[0" << i << "]:";
+      else
+        cout<< "["<<i<<"]:";
         if (hash[i].front()!=0)
         {
             for (list<int>::iterator x = hash[i].begin(); x != hash[i].end(); x++)
-                cout << *x << " ";
+                cout << setw(3) << setfill(' ') << *x <<  " -> ";
             cout << endl;
         }
         else
@@ -78,4 +81,3 @@ int HashTableChaining :: remove(int value){
     }
     return 0;
 }
-

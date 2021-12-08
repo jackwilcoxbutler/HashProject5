@@ -1,21 +1,26 @@
-#ifndef HashTableChaining_h
-#define HashTableChaining_h
+#ifndef HashTableCuckoo_h
+#define HashTableCuckoo_h
 
-#include <list>
-#include<iomanip>
+
 #include "hashtable.h"
+#include<iostream>
+#include<iomanip>
+#include<cmath>
 
-class HashTableChaining : virtual public HashTable{
+
+class HashTableCuckoo : virtual public HashTable{
 
 private:
-
+    int * t1;
+    int * t2;
+    void rehash();
 public:
-    list<int> * hash;
-    HashTableChaining(){
+    HashTableCuckoo(){
         m=0;
     }
-    ~HashTableChaining(){
-        delete [] hash;
+    ~HashTableCuckoo(){
+        delete [] t1;
+        delete [] t2;
     }
 
 
