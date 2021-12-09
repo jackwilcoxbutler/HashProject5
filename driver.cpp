@@ -71,6 +71,7 @@ int main(){
         int tempVal;
         cout << "Insert (Enter Value) : ";
         cin >> tempVal;
+        //cout << table->insert(tempVal) << endl;
         if (1==table->insert(tempVal))
             cout<<"Insert Successful"<< endl;
         else

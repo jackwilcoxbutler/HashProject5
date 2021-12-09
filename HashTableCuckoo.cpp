@@ -52,8 +52,10 @@ int HashTableCuckoo :: insert(int value){
     }
     //cout<< "failed to insert "<< value << endl;
     if (0==rehash())
+    {
         cout << "**Rehash Failed! Table Not Valid!**" << endl;
         return 0;
+    }
     insert(value);
     return 1;
 }
@@ -154,7 +156,7 @@ void HashTableCuckoo :: print(){
         //cout.width(10); cout<<left << setfill(' ')<<((t2[i]!=0) ? t2[i] : NULL)<< endl;
         
       if(i<10)
-        {cout<< "[0"<<i<<"]: ";}
+          cout <<"[0" << i << "]: ";//<< setw(5) << setfill(' ') << t1[i] << setw(6) << setfill(' ')<< "[0" << i << "] : " << setw(5) << setfill(' ')<< t2[i] << endl;
       else
         {cout<< "["<<i<<"]: ";}
         
@@ -172,7 +174,9 @@ void HashTableCuckoo :: print(){
     cout<<endl;
          
     }
-    cout << endl << "***********************************" << endl;
+
+    
+    cout << "***********************************" << endl;
     
 }
 
