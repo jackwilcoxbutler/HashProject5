@@ -53,7 +53,7 @@ int main(){
       cout << "3) Search" << endl;
       cout << "4) Delete" << endl;
       cout << "5) Print Hash Table" << endl;
-      cout << "0) Quit" << endl;
+      cout << "0) Quit" << endl << endl;
       cout << "Please enter your choice : ";
       cin >> input;
       cout << endl;
