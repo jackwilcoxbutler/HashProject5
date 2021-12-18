@@ -1,3 +1,5 @@
+Jack Wilcox and Jesse Hamlin
+
 #include<iostream>
 #include<ostream>
 #include"hashtable.h"
