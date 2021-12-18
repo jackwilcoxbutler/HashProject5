@@ -1,4 +1,4 @@
-Jack Wilcox and Jesse Hamlin
+\\Jack Wilcox and Jesse Hamlin
 
 #include<iostream>
 #include<ostream>
